@@ -28,8 +28,8 @@ public class Texture {
 		}
 	}
 	
-	public static Texture wood = new Texture("C:/Users/gb304275/Desktop/JavaRepository/3dGraphics/src/Images/wood.jpg", 64);
-	public static Texture brick = new Texture("C:/Users/gb304275/Desktop/JavaRepository/3dGraphics/src/Images/redbrick.jpg", 64);
-	public static Texture bluestone = new Texture("C:/Users/gb304275/Desktop/JavaRepository/3dGraphics/src/Images/bluestone.jpg", 64);
-	public static Texture stone = new Texture("C:/Users/gb304275/Desktop/JavaRepository/3dGraphics/src/Images/greystone.jpg", 64);
+	public static Texture wood = new Texture("src/Images/wood.jpg", 64);
+	public static Texture brick = new Texture("src/Images/redbrick.jpg", 64);
+	public static Texture bluestone = new Texture("src/Images/bluestone.jpg", 64);
+	public static Texture stone = new Texture("src/Images/greystone.jpg", 64);
 }
