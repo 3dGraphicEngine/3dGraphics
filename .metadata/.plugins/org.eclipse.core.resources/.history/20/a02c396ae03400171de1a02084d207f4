@@ -1,0 +1,150 @@
+package game;
+
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.io.File;
+import java.io.IOException;
+
+import javax.sound.sampled.AudioFormat;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.DataLine;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.SourceDataLine;
+
+
+
+public class Camera implements KeyListener{
+	private final int BUFFER_SIZE = 128000;
+    private File soundFile;
+    private AudioInputStream audioStream;
+    private AudioFormat audioFormat;
+    private SourceDataLine sourceLine;
+	public double xPos, yPos, xDir, yDir, xPlane, yPlane;
+	public boolean left, right, forward, back;
+	public final double MOVE_SPEED = .05;
+	public final double ROTATION_SPEED = .05;
+	public Camera(double x, double y, double xd, double yd, double xp, double yp) {
+		xPos = x;
+		yPos = y;
+		xDir = xd;
+		yDir = yd;
+		xPlane = xp;
+		yPlane = yp;
+	}
+    public void playSound(String filename){
+    	filename = "src/game/movement.wav";
+        String strFilename = filename;
+
+        try {
+            soundFile = new File(strFilename);
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.exit(1);
+        }
+
+        try {
+            audioStream = AudioSystem.getAudioInputStream(soundFile);
+        } catch (Exception e){
+            e.printStackTrace();
+            System.exit(1);
+        }
+
+        audioFormat = audioStream.getFormat();
+
+        DataLine.Info info = new DataLine.Info(SourceDataLine.class, audioFormat);
+        try {
+            sourceLine = (SourceDataLine) AudioSystem.getLine(info);
+            sourceLine.open(audioFormat);
+        } catch (LineUnavailableException e) {
+            e.printStackTrace();
+            System.exit(1);
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.exit(1);
+        }
+
+        sourceLine.start();
+
+        int nBytesRead = 0;
+        byte[] abData = new byte[BUFFER_SIZE];
+        while (nBytesRead != -1) {
+            try {
+                nBytesRead = audioStream.read(abData, 0, abData.length);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            if (nBytesRead >= 0) {
+                @SuppressWarnings("unused")
+                int nBytesWritten = sourceLine.write(abData, 0, nBytesRead);
+            }
+        }
+
+        //sourceLine.drain();
+        //sourceLine.close();
+    }
+    
+	public void keyPressed(KeyEvent key) {
+		if((key.getKeyCode() == KeyEvent.VK_A)){
+			left = true;
+		}
+		if((key.getKeyCode() == KeyEvent.VK_D))
+			right = true;
+		if((key.getKeyCode() == KeyEvent.VK_W)){
+			forward = true;
+			try {
+				Thread.sleep(500);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			playSound(null);
+		}
+		if((key.getKeyCode() == KeyEvent.VK_S))
+			back = true;
+	}
+	public void keyReleased(KeyEvent key) {
+		if((key.getKeyCode() == KeyEvent.VK_A))
+			left = false;
+		if((key.getKeyCode() == KeyEvent.VK_D))
+			right = false;
+		if((key.getKeyCode() == KeyEvent.VK_W))
+			forward = false;
+		if((key.getKeyCode() == KeyEvent.VK_S))
+			back = false;
+	}
+	public void update(int[][] map) {
+		if(forward) {
+			if(map[(int)(xPos + xDir * MOVE_SPEED)][(int)yPos] == 0) {
+				xPos+=xDir*MOVE_SPEED;
+			}
+			if(map[(int)xPos][(int)(yPos + yDir * MOVE_SPEED)] ==0)
+				yPos+=yDir*MOVE_SPEED;
+		}
+		if(back) {
+			if(map[(int)(xPos - xDir * MOVE_SPEED)][(int)yPos] == 0)
+				xPos-=xDir*MOVE_SPEED;
+			if(map[(int)xPos][(int)(yPos - yDir * MOVE_SPEED)]==0)
+				yPos-=yDir*MOVE_SPEED;
+		}
+		if(right) {
+			double oldxDir=xDir;
+			xDir=xDir*Math.cos(-ROTATION_SPEED) - yDir*Math.sin(-ROTATION_SPEED);
+			yDir=oldxDir*Math.sin(-ROTATION_SPEED) + yDir*Math.cos(-ROTATION_SPEED);
+			double oldxPlane = xPlane;
+			xPlane=xPlane*Math.cos(-ROTATION_SPEED) - yPlane*Math.sin(-ROTATION_SPEED);
+			yPlane=oldxPlane*Math.sin(-ROTATION_SPEED) + yPlane*Math.cos(-ROTATION_SPEED);
+		}
+		if(left) {
+			double oldxDir=xDir;
+			xDir=xDir*Math.cos(ROTATION_SPEED) - yDir*Math.sin(ROTATION_SPEED);
+			yDir=oldxDir*Math.sin(ROTATION_SPEED) + yDir*Math.cos(ROTATION_SPEED);
+			double oldxPlane = xPlane;
+			xPlane=xPlane*Math.cos(ROTATION_SPEED) - yPlane*Math.sin(ROTATION_SPEED);
+			yPlane=oldxPlane*Math.sin(ROTATION_SPEED) + yPlane*Math.cos(ROTATION_SPEED);
+		}
+	}
+	public void keyTyped(KeyEvent arg0) {
+		
+	}
+}

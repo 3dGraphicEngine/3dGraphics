@@ -1,9 +1,26 @@
 package game;
+
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.File;
+import java.io.IOException;
+
+import javax.sound.sampled.AudioFormat;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.SourceDataLine;
+import javax.sound.sampled.UnsupportedAudioFileException;
+
 
 
 public class Camera implements KeyListener{
+	private final int BUFFER_SIZE = 128000;
+    private File soundFile;
+    private AudioInputStream audioStream;
+    private AudioFormat audioFormat;
+    private SourceDataLine sourceLine;
 	public double xPos, yPos, xDir, yDir, xPlane, yPlane;
 	public boolean left, right, forward, back;
 	public final double MOVE_SPEED = .05;
@@ -16,6 +33,26 @@ public class Camera implements KeyListener{
 		xPlane = xp;
 		yPlane = yp;
 	}
+	public void Camera1() {
+	   
+	      try {
+	         // Open an audio input stream.
+	    	  File soundFile = new File("src/game/movement.wav");
+	    	  AudioInputStream audioIn = AudioSystem.getAudioInputStream(soundFile);
+	         // Get a sound clip resource.
+	         Clip clip = AudioSystem.getClip();
+	         // Open audio clip and load samples from the audio input stream.
+	         clip.open(audioIn);
+	         clip.start();
+	      } catch (UnsupportedAudioFileException e) {
+	         e.printStackTrace();
+	      } catch (IOException e) {
+	         e.printStackTrace();
+	      } catch (LineUnavailableException e) {
+	         e.printStackTrace();
+	      }
+	   }
+    
 	public void keyPressed(KeyEvent key) {
 		if((key.getKeyCode() == KeyEvent.VK_A))
 			left = true;
@@ -23,8 +60,10 @@ public class Camera implements KeyListener{
 			right = true;
 		if((key.getKeyCode() == KeyEvent.VK_W))
 			forward = true;
+			Camera1();
 		if((key.getKeyCode() == KeyEvent.VK_S))
 			back = true;
+			Camera1();
 	}
 	public void keyReleased(KeyEvent key) {
 		if((key.getKeyCode() == KeyEvent.VK_A))
