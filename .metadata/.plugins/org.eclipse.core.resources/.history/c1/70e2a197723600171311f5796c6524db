@@ -18,7 +18,6 @@ public class Camera implements KeyListener{
 	public double xPos, yPos, xDir, yDir, xPlane, yPlane;
 	public boolean left, right, forward, back;
 	public final double MOVE_SPEED = .05;
-	static boolean stop;
 	public final double ROTATION_SPEED = .05;
 	public Camera(double x, double y, double xd, double yd, double xp, double yp) {
 		xPos = x;
@@ -48,6 +47,7 @@ public class Camera implements KeyListener{
 	      }
 	   }
 	public static void Camera2() {
+		String stop = null;
 		int time;
 		   Random rand = new Random();
 		   do{
@@ -58,9 +58,9 @@ public class Camera implements KeyListener{
 			e.printStackTrace();
 		}
 		   if (time < 10){
-			   stop = false;
+			   stop = "true";
 		   }
-		   }while (!stop);
+		   }while (stop.equals("true"));
 		  if(time < 10){
 		      try {
 		         // Open an audio input stream.

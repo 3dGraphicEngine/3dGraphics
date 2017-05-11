@@ -58,7 +58,7 @@ public class Camera implements KeyListener{
 			e.printStackTrace();
 		}
 		   if (time < 10){
-			   stop = false;
+			   stop = true;
 		   }
 		   }while (!stop);
 		  if(time < 10){

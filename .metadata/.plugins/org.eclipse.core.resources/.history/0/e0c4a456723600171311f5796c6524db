@@ -58,8 +58,8 @@ public class Game extends JFrame implements Runnable{
 		setBackground(Color.black);
 		setLocationRelativeTo(null);
 		setVisible(true);
-		start();
 		Camera.Camera2();
+		start();
 	}
 	private synchronized void start() {
 		running = true;

@@ -4,7 +4,6 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.File;
 import java.io.IOException;
-import java.util.Random;
 
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
@@ -18,7 +17,6 @@ public class Camera implements KeyListener{
 	public double xPos, yPos, xDir, yDir, xPlane, yPlane;
 	public boolean left, right, forward, back;
 	public final double MOVE_SPEED = .05;
-	static boolean stop;
 	public final double ROTATION_SPEED = .05;
 	public Camera(double x, double y, double xd, double yd, double xp, double yp) {
 		xPos = x;
@@ -47,39 +45,6 @@ public class Camera implements KeyListener{
 	         e.printStackTrace();
 	      }
 	   }
-	public static void Camera2() {
-		int time;
-		   Random rand = new Random();
-		   do{
-		   time = rand.nextInt(10);
-		   try {
-			Thread.sleep(100);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-		   if (time < 10){
-			   stop = false;
-		   }
-		   }while (!stop);
-		  if(time < 10){
-		      try {
-		         // Open an audio input stream.
-		    	  File soundFile = new File("src/game/footsteps.wav");
-		    	  AudioInputStream audioIn = AudioSystem.getAudioInputStream(soundFile);
-		         // Get a sound clip resource.
-		         Clip clip = AudioSystem.getClip();
-		         // Open audio clip and load samples from the audio input stream.
-		         clip.open(audioIn);
-		         clip.start();
-		      } catch (UnsupportedAudioFileException e) {
-		         e.printStackTrace();
-		      } catch (IOException e) {
-		         e.printStackTrace();
-		      } catch (LineUnavailableException e) {
-		         e.printStackTrace();
-		      }
-		  }
-	   }
     
 	public void keyPressed(KeyEvent key) {
 		if((key.getKeyCode() == KeyEvent.VK_A))
@@ -90,6 +55,12 @@ public class Camera implements KeyListener{
 			forward = true;
 		if((key.getKeyCode() == KeyEvent.VK_S))
 			back = true;
+		try {
+			Thread.sleep(100);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		Camera1();
 	}
 	public void keyReleased(KeyEvent key) {
 		if((key.getKeyCode() == KeyEvent.VK_A))

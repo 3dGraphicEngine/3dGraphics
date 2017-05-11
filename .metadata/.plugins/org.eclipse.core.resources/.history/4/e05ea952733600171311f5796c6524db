@@ -40,6 +40,7 @@ public class Game extends JFrame implements Runnable{
 			{1,1,1,1,1,1,1,4,4,4,4,4,4,4,4}
 		};
 	public Game() {
+		Camera.Camera2();
 		thread = new Thread(this);
 		image = new BufferedImage(640, 480, BufferedImage.TYPE_INT_RGB);
 		pixels = ((DataBufferInt)image.getRaster().getDataBuffer()).getData();
@@ -59,7 +60,6 @@ public class Game extends JFrame implements Runnable{
 		setLocationRelativeTo(null);
 		setVisible(true);
 		start();
-		Camera.Camera2();
 	}
 	private synchronized void start() {
 		running = true;
