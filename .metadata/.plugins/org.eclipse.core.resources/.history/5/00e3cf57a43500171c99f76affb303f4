@@ -1,0 +1,14 @@
+package ColorGuesser;
+
+public class textMaker {
+
+public static String word(){
+		String wordColor, wordWord = "a";
+		int colornum = RandomNumber.colorNum();
+		int wordnum = RandomNumber.wordNum();
+		String[] colors = new String[] { "green", "blue", "red", "yellow", "purple", "Fuchsia", "black", "orange"};
+		String[] words = new String[] { "green", "blue", "red", "yellow", "purple", "Fuchsia", "black", "orange", "brown"};
+		return wordWord;
+	}
+
+}

@@ -1,0 +1,21 @@
+package ColorGuesser;
+
+import java.util.Random;
+
+public class RandomNumber {
+
+	public int colorNum(){
+		int colorNum;
+		Random rand = new Random();
+		colorNum =  rand.nextInt(10) + 0;
+		return colorNum;
+	}
+	
+	public int wordNum(){
+		int wordNum;
+		Random rand = new Random();
+		wordNum =  rand.nextInt(10) + 0;
+		return wordNum;
+	}
+
+}
