@@ -1,0 +1,16 @@
+package ColorGuesser;
+
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
+public class ColorGuesser {
+
+	public static void main(String[] args) {
+		String wordColor;
+		String[] colors = new String[] { "green", "blue", "red" };
+		wordColor = colors[1];
+	JOptionPane.showMessageDialog(null, new JLabel("<html><h><font color = '"+wordColor+"'>Hello</font>, <font color = 'blue'>world</font> </h2></html>"));
+
+	}
+
+}

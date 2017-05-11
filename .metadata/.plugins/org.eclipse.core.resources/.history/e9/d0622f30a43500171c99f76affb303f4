@@ -1,0 +1,20 @@
+package ColorGuesser;
+
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
+public class ColorGuesser {
+
+	public static void main(String[] args) {
+		String wordColor, wordWord;
+		int colornum = RandomNumber.colorNum();
+		int wordnum = RandomNumber.wordNum();
+		String[] colors = new String[] { "green", "blue", "red", "yellow", "purple", "Fuchsia", "black", "orange"};
+		String[] words = new String[] { "green", "blue", "red", "yellow", "purple", "Fuchsia", "black", "orange", "brown"};
+		wordColor = colors[colornum];
+		wordWord = words[wordnum];
+	JOptionPane.showMessageDialog(null, new JLabel("<html><h><font color = '"+wordColor+"'>"+wordWord+"</font></h2></html>"));
+
+	}
+
+}
