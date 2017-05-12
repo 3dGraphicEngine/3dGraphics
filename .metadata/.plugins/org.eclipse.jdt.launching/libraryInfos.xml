@@ -38,6 +38,25 @@
 <entry path="C:\Users\db138992\Desktop\EclipsePortable\App\Eclipse\jre\lib\endorsed"/>
 </endorsedDirs>
 </libraryInfo>
+<libraryInfo home="C:\Users\gb304275\Desktop\EclipsePortable\App\Eclipse\jre" version="1.8.0_66">
+<bootpath>
+<entry path="C:\Users\gb304275\Desktop\EclipsePortable\App\Eclipse\jre\lib\resources.jar"/>
+<entry path="C:\Users\gb304275\Desktop\EclipsePortable\App\Eclipse\jre\lib\rt.jar"/>
+<entry path="C:\Users\gb304275\Desktop\EclipsePortable\App\Eclipse\jre\lib\sunrsasign.jar"/>
+<entry path="C:\Users\gb304275\Desktop\EclipsePortable\App\Eclipse\jre\lib\jsse.jar"/>
+<entry path="C:\Users\gb304275\Desktop\EclipsePortable\App\Eclipse\jre\lib\jce.jar"/>
+<entry path="C:\Users\gb304275\Desktop\EclipsePortable\App\Eclipse\jre\lib\charsets.jar"/>
+<entry path="C:\Users\gb304275\Desktop\EclipsePortable\App\Eclipse\jre\lib\jfr.jar"/>
+<entry path="C:\Users\gb304275\Desktop\EclipsePortable\App\Eclipse\jre\classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="C:\Users\gb304275\Desktop\EclipsePortable\App\Eclipse\jre\lib\ext"/>
+<entry path="C:\Windows\Sun\Java\lib\ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="C:\Users\gb304275\Desktop\EclipsePortable\App\Eclipse\jre\lib\endorsed"/>
+</endorsedDirs>
+</libraryInfo>
 <libraryInfo home="C:\Users\db138992\Desktop\EclipsePortable\App\Eclipse\jre" version="1.8.0_66">
 <bootpath>
 <entry path="C:\Users\db138992\Desktop\EclipsePortable\App\Eclipse\jre\lib\resources.jar"/>
