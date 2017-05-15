@@ -18,7 +18,6 @@ public class Menu {
 		    public void actionPerformed(ActionEvent e)
 		    {
 		    	new Game();
-		    	f.setVisible(false);
 		    }
 		});
 		
