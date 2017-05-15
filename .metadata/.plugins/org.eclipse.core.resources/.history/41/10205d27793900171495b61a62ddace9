@@ -1,0 +1,55 @@
+package game;
+
+import javax.swing.*;
+
+import java.awt.*;
+
+
+@SuppressWarnings("serial")
+class Menu extends JFrame
+
+{
+JMenuBar menuBar;
+JMenu menu;
+
+    public Menu()    
+    
+    {
+    setSize(220, 300);
+    setLocationRelativeTo(null);  
+    setTitle("Menu Button");
+    setVisible(true);
+    setDefaultCloseOperation(EXIT_ON_CLOSE);
+    setLayout(new FlowLayout());
+    
+    
+    // Set a background for menubutton to have a visible look
+    getContentPane().setBackground(Color.darkGray);
+ 
+
+    menuBar=new JMenuBar();
+    menuBar.setBorderPainted(false);
+    
+    menu=new JMenu("Play");
+
+    
+    // Add menu to menubar
+    menuBar.add(menu);
+
+    // Add(don't set) menubar to frame
+    add(menuBar);
+
+    // Make frame maximized for a good look
+        //setExtendedState(MAXIMIZED_BOTH);
+
+    // or pack
+    pack();    
+    }
+    public static void main(String args[])
+    {
+    new Menu();
+   
+    
+    }
+
+}
