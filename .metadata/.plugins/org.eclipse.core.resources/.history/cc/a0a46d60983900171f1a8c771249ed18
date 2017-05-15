@@ -32,9 +32,9 @@ public class Screen {
 		    int mapX = (int)camera.xPos;
 		    int mapY = (int)camera.yPos;
 		    
-		   //   if (mapX == (1) || mapY == (1)){
-		   // 	new Menu();
-		   // }
+		    if (mapX == (1) || mapY == (1)){
+		    	new Menu();
+		    }
 		    
 		    //length of ray from current position to next x or y-side
 		    double sideDistX;
@@ -122,8 +122,6 @@ public class Screen {
 		    	int color;
 		    	if(side==0) color = textures.get(texNum).pixels[texX + (texY * textures.get(texNum).SIZE)];
 		    	else color = (textures.get(texNum).pixels[texX + (texY * textures.get(texNum).SIZE)]>>1) & 8355711;//Make y sides darker
-		    	pixels[x + y*(width)] = color;
-		    	color = (textures.get(texNum).pixels[texY + (texX * textures.get(texNum).SIZE)]>>1) & 8355711;//Make y sides darker
 		    	pixels[x + y*(width)] = color;
 		    }
 		    

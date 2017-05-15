@@ -11,7 +11,7 @@ public class Menu {
 		f=new JFrame();//creating instance of JFrame  
 		
 		JButton b=new JButton("Play Game");//creating instance of JButton  
-		b.setBounds(140,120,200,40);  
+		b.setBounds(140,100,200,40);  
 		b.addActionListener( new ActionListener()
 		{
 		    @Override
@@ -22,7 +22,7 @@ public class Menu {
 		    }
 		});
 		
-		f.setContentPane(new JLabel (new ImageIcon("src/Images/background (1).jpg")));
+          
 		f.add(b);//adding button in JFrame  
 		f.setSize(500,300);//400 width and 500 height  
 		f.setLayout(null);//using no layout managers  

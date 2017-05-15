@@ -123,8 +123,8 @@ public class Screen {
 		    	if(side==0) color = textures.get(texNum).pixels[texX + (texY * textures.get(texNum).SIZE)];
 		    	else color = (textures.get(texNum).pixels[texX + (texY * textures.get(texNum).SIZE)]>>1) & 8355711;//Make y sides darker
 		    	pixels[x + y*(width)] = color;
-		    	color = (textures.get(texNum).pixels[texY + (texX * textures.get(texNum).SIZE)]>>1) & 8355711;//Make y sides darker
-		    	pixels[x + y*(width)] = color;
+		    	//color = (textures.get(texNum).pixels[texY + (texX * textures.get(texNum).SIZE)]>>1) & 8355711;//Make y sides darker
+		    	//pixels[x + y*(width)] = color;
 		    }
 		    
 		}
