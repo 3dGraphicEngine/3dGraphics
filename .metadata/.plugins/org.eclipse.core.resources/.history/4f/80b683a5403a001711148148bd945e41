@@ -85,7 +85,7 @@ public class Game extends JFrame implements Runnable{
 		camera = new Camera(4.5, 4.5, 1, 0, 0, -.66);
 		screen = new Screen(map, mapWidth, mapHeight, textures, 640, 480);
 		addKeyListener(camera);
-		setSize(640, 480);
+		setSize(640, 640);
 		setResizable(false);
 		setTitle("3D Engine");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

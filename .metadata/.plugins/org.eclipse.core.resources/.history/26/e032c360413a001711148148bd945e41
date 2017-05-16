@@ -54,7 +54,7 @@ public class Camera implements KeyListener{
 		if((key.getKeyCode() == KeyEvent.VK_S))
 			back = true;
 		try {
-			Thread.sleep(90);
+			Thread.sleep(70);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}

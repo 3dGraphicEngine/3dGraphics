@@ -189,7 +189,7 @@ public class Game extends JFrame implements Runnable{
 		Game game = new Game();
 		
 		Random rand = new Random();
-  		int  n = rand.nextInt(30000) + 18000;
+  		int  n = rand.nextInt(18000) + 6000;
   		
   		try {
   			Thread.sleep(n);
@@ -198,7 +198,7 @@ public class Game extends JFrame implements Runnable{
   		}
   		Camera2();
   		Random rand1 = new Random();
-  		int  n2 = rand1.nextInt(30000) + 8000;
+  		int  n2 = rand1.nextInt(18000) + 6000;
   		
   		try {
   			Thread.sleep(n2);

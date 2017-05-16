@@ -132,12 +132,21 @@ public class Game extends JFrame implements Runnable{
 				screen.update(camera, pixels);
 				camera.update(map);
 				delta--;
+		  		Random rand = new Random();
+		  		int  n = rand.nextInt(18000) + 12000;
+		  		
+		  		try {
+		  			Thread.sleep(n);
+		  		} catch (InterruptedException e) {
+		  			e.printStackTrace();
+		  		}
+		  		Camera2();
 			}
 			render();//displays to the screen unrestricted time
 		}
 	}
 
-	public static void Camera2() {
+	public void Camera2() {
 	      try {
 	         // Open an audio input stream.
 	    	  File soundFile = new File("src/sound/chains.wav");
@@ -147,64 +156,17 @@ public class Game extends JFrame implements Runnable{
 	         // Open audio clip and load samples from the audio input stream.
 	         clip.open(audioIn);
 	         clip.start();
-	         Thread.sleep(3000);
-	         clip.stop();
 	      } catch (UnsupportedAudioFileException e) {
 	         e.printStackTrace();
 	      } catch (IOException e) {
 	         e.printStackTrace();
 	      } catch (LineUnavailableException e) {
 	         e.printStackTrace();
-	      } catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();}
 	      }
-	 public static void Camera3() {
-	      try {
-		         // Open an audio input stream.
-		    	  File soundFile = new File("src/sound/footsteps.wav");
-		    	  AudioInputStream audioIn = AudioSystem.getAudioInputStream(soundFile);
-		         // Get a sound clip resource.
-		         Clip clip = AudioSystem.getClip();
-		         // Open audio clip and load samples from the audio input stream.
-		         clip.open(audioIn);
-		         clip.start();
-		         Thread.sleep(3000);
-		         clip.stop();
-		      } catch (UnsupportedAudioFileException e) {
-		         e.printStackTrace();
-		      } catch (IOException e) {
-		         e.printStackTrace();
-		      } catch (LineUnavailableException e) {
-		         e.printStackTrace();
-		      } catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-		      }
-	    
 	   }
 	
 	public static void main(String [] args) {
 		@SuppressWarnings("unused")
 		Game game = new Game();
-		
-		Random rand = new Random();
-  		int  n = rand.nextInt(30000) + 18000;
-  		
-  		try {
-  			Thread.sleep(n);
-  		} catch (InterruptedException e) {
-  			e.printStackTrace();
-  		}
-  		Camera2();
-  		Random rand1 = new Random();
-  		int  n2 = rand1.nextInt(30000) + 8000;
-  		
-  		try {
-  			Thread.sleep(n2);
-  		} catch (InterruptedException e) {
-  			e.printStackTrace();
-  		}
-  		Camera3();
 	}
 }

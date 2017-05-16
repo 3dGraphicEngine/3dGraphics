@@ -1982,3 +1982,146 @@ org.eclipse.core.runtime.AssertionFailedException: null argument:The dialog shou
 	at edu.wpi.first.wpilib.plugins.core.installer.AbstractInstaller.install(AbstractInstaller.java:155)
 	at edu.wpi.first.wpilib.plugins.core.installer.AbstractInstaller$1.run(AbstractInstaller.java:92)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SESSION 2017-05-15 13:20:46.906 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_66
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.standard.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.standard.product
+
+!ENTRY org.eclipse.core.resources 2 10035 2017-05-15 13:20:47.998
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-05-15 13:20:52.462
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\gb304275'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2017-05-15 13:20:52.790
+!MESSAGE Installing tools if necessary
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2017-05-15 13:20:52.790
+!MESSAGE Installedtools
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2017-05-15 13:20:52.821
+!MESSAGE Installing cpp if necessary
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2017-05-15 13:20:52.852
+!MESSAGE Installedcpp
+
+!ENTRY WPILib_CPP_Robot_Development 1 0 2017-05-15 13:20:52.852
+!MESSAGE Updating projects
+
+!ENTRY WPILib_CPP_Robot_Development 4 0 2017-05-15 13:20:52.852
+!MESSAGE Error updating projects.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Resource '/ColorWordGuesser' is not open.
+	at org.eclipse.core.internal.resources.Project.checkAccessible(Project.java:150)
+	at org.eclipse.core.internal.resources.Project.hasNature(Project.java:584)
+	at edu.wpi.first.wpilib.plugins.cpp.WPILibCPPPlugin.updateProjects(WPILibCPPPlugin.java:115)
+	at edu.wpi.first.wpilib.plugins.cpp.WPILibCPPPlugin.earlyStartup(WPILibCPPPlugin.java:101)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.runEarlyStartup(EarlyStartupRunnable.java:89)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:67)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.Workbench$56.run(Workbench.java:2755)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 org.eclipse.core.resources 4 372 2017-05-15 13:20:52.852
+!MESSAGE Resource '/ColorWordGuesser' is not open.
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2017-05-15 13:20:52.868
+!MESSAGE Installing java if necessary
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2017-05-15 13:20:52.868
+!MESSAGE Installedjava
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2017-05-15 13:20:52.868
+!MESSAGE Updating projects
+
+!ENTRY WPILib_Java_Robot_Development 4 0 2017-05-15 13:20:52.868
+!MESSAGE Error updating projects.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Resource '/ColorWordGuesser' is not open.
+	at org.eclipse.core.internal.resources.Project.checkAccessible(Project.java:150)
+	at org.eclipse.core.internal.resources.Project.hasNature(Project.java:584)
+	at edu.wpi.first.wpilib.plugins.java.WPILibJavaPlugin.updateProjects(WPILibJavaPlugin.java:126)
+	at edu.wpi.first.wpilib.plugins.java.WPILibJavaPlugin.earlyStartup(WPILibJavaPlugin.java:249)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.runEarlyStartup(EarlyStartupRunnable.java:89)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:67)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.Workbench$56.run(Workbench.java:2755)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 org.eclipse.core.resources 4 372 2017-05-15 13:20:52.868
+!MESSAGE Resource '/ColorWordGuesser' is not open.
+!SESSION 2017-05-16 08:03:15.798 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_66
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.standard.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.standard.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-05-16 08:03:26.485
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\gb304275'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2017-05-16 08:03:28.042
+!MESSAGE Installing tools if necessary
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2017-05-16 08:03:28.042
+!MESSAGE Installedtools
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2017-05-16 08:03:28.120
+!MESSAGE Installing cpp if necessary
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2017-05-16 08:03:28.182
+!MESSAGE Installedcpp
+
+!ENTRY WPILib_CPP_Robot_Development 1 0 2017-05-16 08:03:28.182
+!MESSAGE Updating projects
+
+!ENTRY WPILib_CPP_Robot_Development 4 0 2017-05-16 08:03:28.182
+!MESSAGE Error updating projects.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Resource '/ColorWordGuesser' is not open.
+	at org.eclipse.core.internal.resources.Project.checkAccessible(Project.java:150)
+	at org.eclipse.core.internal.resources.Project.hasNature(Project.java:584)
+	at edu.wpi.first.wpilib.plugins.cpp.WPILibCPPPlugin.updateProjects(WPILibCPPPlugin.java:115)
+	at edu.wpi.first.wpilib.plugins.cpp.WPILibCPPPlugin.earlyStartup(WPILibCPPPlugin.java:101)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.runEarlyStartup(EarlyStartupRunnable.java:89)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:67)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.Workbench$56.run(Workbench.java:2755)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 org.eclipse.core.resources 4 372 2017-05-16 08:03:28.198
+!MESSAGE Resource '/ColorWordGuesser' is not open.
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2017-05-16 08:03:28.338
+!MESSAGE Installing java if necessary
+
+!ENTRY edu.wpi.first.wpilib.plugins.core 1 0 2017-05-16 08:03:28.338
+!MESSAGE Installedjava
+
+!ENTRY WPILib_Java_Robot_Development 1 0 2017-05-16 08:03:28.338
+!MESSAGE Updating projects
+
+!ENTRY WPILib_Java_Robot_Development 4 0 2017-05-16 08:03:28.338
+!MESSAGE Error updating projects.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Resource '/ColorWordGuesser' is not open.
+	at org.eclipse.core.internal.resources.Project.checkAccessible(Project.java:150)
+	at org.eclipse.core.internal.resources.Project.hasNature(Project.java:584)
+	at edu.wpi.first.wpilib.plugins.java.WPILibJavaPlugin.updateProjects(WPILibJavaPlugin.java:126)
+	at edu.wpi.first.wpilib.plugins.java.WPILibJavaPlugin.earlyStartup(WPILibJavaPlugin.java:249)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.runEarlyStartup(EarlyStartupRunnable.java:89)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:67)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.Workbench$56.run(Workbench.java:2755)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 org.eclipse.core.resources 4 372 2017-05-16 08:03:28.338
+!MESSAGE Resource '/ColorWordGuesser' is not open.

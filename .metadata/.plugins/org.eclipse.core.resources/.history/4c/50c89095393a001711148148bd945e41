@@ -4,6 +4,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.File;
 import java.io.IOException;
+import java.util.Random;
 
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
@@ -43,6 +44,26 @@ public class Camera implements KeyListener{
 	         e.printStackTrace();
 	      }
 	   }
+	
+	public void Camera2() {
+		   
+	      try {
+	         // Open an audio input stream.
+	    	  File soundFile = new File("src/game/chains.wav");
+	    	  AudioInputStream audioIn = AudioSystem.getAudioInputStream(soundFile);
+	         // Get a sound clip resource.
+	         Clip clip = AudioSystem.getClip();
+	         // Open audio clip and load samples from the audio input stream.
+	         clip.open(audioIn);
+	         clip.start();
+	      } catch (UnsupportedAudioFileException e) {
+	         e.printStackTrace();
+	      } catch (IOException e) {
+	         e.printStackTrace();
+	      } catch (LineUnavailableException e) {
+	         e.printStackTrace();
+	      }
+	   }
     
 	public void keyPressed(KeyEvent key) {
 		if((key.getKeyCode() == KeyEvent.VK_A))
@@ -54,11 +75,23 @@ public class Camera implements KeyListener{
 		if((key.getKeyCode() == KeyEvent.VK_S))
 			back = true;
 		try {
-			Thread.sleep(90);
+			Thread.sleep(100);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 		Camera1();
+		
+		do{
+		Random rand = new Random();
+		int  n = rand.nextInt(1800) + 1200;
+		
+		try {
+			Thread.sleep(n);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		Camera2();
+		}while(forward = true);
 	}
 	public void keyReleased(KeyEvent key) {
 		if((key.getKeyCode() == KeyEvent.VK_A))
@@ -69,7 +102,6 @@ public class Camera implements KeyListener{
 			forward = false;
 		if((key.getKeyCode() == KeyEvent.VK_S))
 			back = false;
-		
 	}
 	public void update(int[][] map) {
 		if(forward) {
