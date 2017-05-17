@@ -5,16 +5,7 @@ import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Random;
-
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
-import javax.sound.sampled.LineUnavailableException;
-import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.JFrame;
 
 public class Game extends JFrame implements Runnable{
@@ -137,97 +128,10 @@ public class Game extends JFrame implements Runnable{
 			render();//displays to the screen unrestricted time
 		}
 	}
-
-	public static void Camera2() {
-	      try {
-	         // Open an audio input stream.
-	    	  File soundFile = new File("src/sound/chains.wav");
-	    	  AudioInputStream audioIn = AudioSystem.getAudioInputStream(soundFile);
-	         // Get a sound clip resource.
-	         Clip clip = AudioSystem.getClip();
-	         // Open audio clip and load samples from the audio input stream.
-	         clip.open(audioIn);
-	         clip.start();
-	         Thread.sleep(3000);
-	         clip.stop();
-	      } catch (UnsupportedAudioFileException e) {
-	         e.printStackTrace();
-	      } catch (IOException e) {
-	         e.printStackTrace();
-	      } catch (LineUnavailableException e) {
-	         e.printStackTrace();
-	      } catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();}
-	      }
-	 public static void Camera3() {
-	      try {
-		         // Open an audio input stream.
-		    	  File soundFile = new File("src/sound/footsteps.wav");
-		    	  AudioInputStream audioIn = AudioSystem.getAudioInputStream(soundFile);
-		         // Get a sound clip resource.
-		         Clip clip = AudioSystem.getClip();
-		         // Open audio clip and load samples from the audio input stream.
-		         clip.open(audioIn);
-		         clip.start();
-		         Thread.sleep(3000);
-		         clip.stop();
-		      } catch (UnsupportedAudioFileException e) {
-		         e.printStackTrace();
-		      } catch (IOException e) {
-		         e.printStackTrace();
-		      } catch (LineUnavailableException e) {
-		         e.printStackTrace();
-		      } catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-		      }
-	    
-	   }
-	 public static void Camera4() {
-	      try {
-		         // Open an audio input stream.
-		    	  File soundFile = new File("src/sound/light.wav");
-		    	  AudioInputStream audioIn = AudioSystem.getAudioInputStream(soundFile);
-		         // Get a sound clip resource.
-		         Clip clip = AudioSystem.getClip();
-		         // Open audio clip and load samples from the audio input stream.
-		         clip.open(audioIn);
-		         clip.loop(Clip.LOOP_CONTINUOUSLY); 
-		      } catch (UnsupportedAudioFileException e) {
-		         e.printStackTrace();
-		      } catch (IOException e) {
-		         e.printStackTrace();
-		      } catch (LineUnavailableException e) {
-		         e.printStackTrace();
-		      }
-	   }
 	 
 	public static void main(String [] args) {
 		@SuppressWarnings("unused")
 		Game game = new Game();
-		
-		Camera4();
-		
-		Random rand = new Random();
-  		int  n = rand.nextInt(20000) + 15000;
-  		
-  		try {
-  			Thread.sleep(n);
-  		} catch (InterruptedException e) {
-  			e.printStackTrace();
-  		}
-  		Camera2();
-  		Random rand1 = new Random();
-  		int  n2 = rand1.nextInt(15000) + 8000;
-  		
-  		try {
-  			Thread.sleep(n2);
-  		} catch (InterruptedException e) {
-  			e.printStackTrace();
-  		}
-  		Camera3();
-  		
   		}
 
 }

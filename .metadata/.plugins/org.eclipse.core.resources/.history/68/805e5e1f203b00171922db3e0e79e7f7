@@ -1,0 +1,36 @@
+package game;
+import java.io.File;
+
+import javax.swing.*;
+import javax.sound.sampled.*;
+
+public class Music {
+
+    public static void main(String[] args) throws Exception {
+    	 File soundFile = new File("src/game/movement.wav");
+   	  AudioInputStream audioIn = AudioSystem.getAudioInputStream(soundFile);
+        // Get a sound clip resource.
+        Clip clip = AudioSystem.getClip();
+        AudioInputStream ais = AudioSystem.
+            getAudioInputStream( audioIn );
+        clip.open(ais);
+
+       // URL url2 = new URL(
+        //    "");
+        //Clip clip2 = AudioSystem.getClip();
+        //AudioInputStream ais2 = AudioSystem.
+      //      getAudioInputStream( url2 );
+       // clip2.open(ais2);
+
+        // loop continuously
+        clip.loop(Clip.LOOP_CONTINUOUSLY);
+      //  clip2.loop(Clip.LOOP_CONTINUOUSLY);
+        SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                // A GUI element to prevent the Clip's daemon Thread
+                // from terminating at the end of the main()
+                JOptionPane.showMessageDialog(null, "Close to exit!");
+            }
+        });
+    }
+}
