@@ -39,7 +39,7 @@ public class Game extends JFrame implements Runnable{
 		{1,	3,	0,	1,	0,	4,	1,	0,	0,	0,	4,	0,	4,	0,	0,	0,	1,	0,	0,	0,	0,	2,	0,	1,	0,	3,	0,	4,	0,	0,	0,	0,	0,	0,	0,	0,	0,	4,	0,	1},
 		{4,	0,	0,	0,	0,	1,	0,	1,	1,	0,	1,	0,	0,	3,	0,	2,	2,	0,	0,	0,	0,	2,	0,	4,	0,	1,	0,	4,	0,	1,	0,	0,	1,	0,	1,	0,	0,	4,	0,	1},
 		{1,	0,	2,	1,	4,	1,	0,	0,	1,	0,	0,	1,	0,	3,	0,	0,	1,	0,	0,	0,	0,	2,	0,	0,	0,	1,	0,	1,	0,	0,	4,	0,	0,	0,	0,	0,	1,	1,	0,	1},
-		{1,	0,	0,	4,	0,	0,	0,	0,	0,	3,	0,	1,	0,	3,	3,	0,	1,	0,	0,	0,	4,	0,	4,	4,	4,	1,	0,	1,	1,	0,	4,	0,	4,	0,	4,	0,	0,	0,	0,	1},
+		{1,	0,	0,	0,	0,	0,	0,	0,	0,	3,	0,	1,	0,	3,	3,	0,	1,	0,	0,	0,	4,	0,	4,	4,	4,	1,	0,	1,	1,	0,	4,	0,	4,	0,	4,	0,	0,	0,	0,	1},
 		{4,	4,	4,	4,	0,	1,	0,	0,	0,	3,	0,	1,	0,	0,	0,	0,	4,	1,	1,	4,	1,	0,	0,	0,	0,	0,	0,	0,	1,	4,	4,	0,	0,	0,	0,	0,	1,	1,	1,	4},
 		{1,	0,	0,	0,	0,	1,	2,	0,	3,	3,	0,	4,	0,	1,	1,	0,	0,	0,	1,	0,	0,	0,	1,	1,	4,	4,	4,	0,	0,	0,	1,	1,	1,	1,	0,	4,	0,	0,	0,	4},
 		{1,	0,	1,	3,	3,	0,	2,	4,	0,	0,	0,	0,	0,	4,	0,	0,	1,	0,	4,	0,	4,	4,	0,	0,	0,	0,	2,	0,	0,	0,	0,	0,	0,	0,	4,	4,	0,	1,	0,	4},
@@ -184,10 +184,30 @@ public class Game extends JFrame implements Runnable{
 		      }
 	    
 	   }
-	
+	 public static void Camera4() {
+	      try {
+		         // Open an audio input stream.
+		    	  File soundFile = new File("src/sound/light.wav");
+		    	  AudioInputStream audioIn = AudioSystem.getAudioInputStream(soundFile);
+		         // Get a sound clip resource.
+		         Clip clip = AudioSystem.getClip();
+		         // Open audio clip and load samples from the audio input stream.
+		         clip.open(audioIn);
+		         clip.loop(Clip.LOOP_CONTINUOUSLY); 
+		      } catch (UnsupportedAudioFileException e) {
+		         e.printStackTrace();
+		      } catch (IOException e) {
+		         e.printStackTrace();
+		      } catch (LineUnavailableException e) {
+		         e.printStackTrace();
+		      }
+	   }
+	 
 	public static void main(String [] args) {
 		@SuppressWarnings("unused")
 		Game game = new Game();
+		
+		Camera4();
 		
 		Random rand = new Random();
   		int  n = rand.nextInt(20000) + 15000;
@@ -207,5 +227,7 @@ public class Game extends JFrame implements Runnable{
   			e.printStackTrace();
   		}
   		Camera3();
-	}
+  		
+  		}
+
 }
