@@ -1,7 +1,6 @@
 INDEX VERSION 1.127+C:\Users\gb304275\Desktop\3dGraphics\.metadata\.plugins\org.eclipse.jdt.core
 4027640105.index
 1312434921.index
-3980684541.index
 3091402580.index
 2957723122.index
 3806832041.index
