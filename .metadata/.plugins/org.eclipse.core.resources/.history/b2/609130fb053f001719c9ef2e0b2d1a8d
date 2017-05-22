@@ -1,19 +1,12 @@
 package game;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
 import java.util.ArrayList;
-
 import javax.swing.JFrame;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
 
 public class Game extends JFrame implements Runnable{
 	
@@ -84,30 +77,12 @@ public class Game extends JFrame implements Runnable{
 		camera = new Camera(4.5, 4.5, 1, 0, 0, -.66);
 		screen = new Screen(map, mapWidth, mapHeight, textures, 640, 480);
 		addKeyListener(camera);
-		setSize(640, 510);
+		setSize(640, 480);
 		setResizable(false);
 		setTitle("3D Engine");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBackground(Color.black);
 		setLocationRelativeTo(null);
-		
-		setLayout(new BorderLayout());
-		JMenuBar menuBar = new JMenuBar();
-		JMenu menu = new JMenu("Menu");
-        menuBar.add(menu);
-        JMenuItem item = new JMenuItem("Exit");
-        item.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.exit(0);
-            }
-        });
-        menu.add(item);
-        setJMenuBar(menuBar);
-        getContentPane().add(menuBar, BorderLayout.SOUTH);
-        menu.repaint();
-        menu.setVisible(true);
-		
-		repaint();
 		setVisible(true);
 		
 		start();
