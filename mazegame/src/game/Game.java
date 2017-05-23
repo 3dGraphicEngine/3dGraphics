@@ -1,19 +1,25 @@
 package game;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
+import java.awt.Container;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
 import java.util.ArrayList;
 
+import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JToolBar;
 
 public class Game extends JFrame implements Runnable{
 	
@@ -89,29 +95,32 @@ public class Game extends JFrame implements Runnable{
 		setTitle("3D Engine");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
-		
 		setLayout(new BorderLayout());
-		JMenuBar menuBar = new JMenuBar();
-		JMenu menu = new JMenu("Menu");
-        menuBar.add(menu);
-        JMenuItem item = new JMenuItem("Exit");
-        item.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.exit(0);
-            }
-        });
-        menu.add(item);
-        setJMenuBar(menuBar);
-        getContentPane().add(menuBar, BorderLayout.SOUTH);
-        menu.repaint();
-        menu.setVisible(true);
 		
-		repaint();
-		setVisible(true);
+		JToolBar toolbar = new JToolBar();
+		toolbar.setRollover(true);
+    
+		add(toolbar, BorderLayout.SOUTH);
 		
+		JPanel pane = new JPanel();
+		add(pane, BorderLayout.CENTER);
+		
+		int seconds = 0;
+		
+		for (seconds = 0; seconds >= 999; seconds++) {
+			   seconds = seconds++;
+			}
+
+		JLabel label = new JLabel();
+		label.setText(String.valueOf(seconds));
+		
+	    toolbar.add(label);
+		
+        setVisible(true);
 		start();
+		
 	}
+	
 	private synchronized void start() {
 		running = true;
 		thread.start();
@@ -157,6 +166,7 @@ public class Game extends JFrame implements Runnable{
 	public static void main(String [] args) {
 		@SuppressWarnings("unused")
 		Game game = new Game();
+		
   		}
 
 }

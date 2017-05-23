@@ -1,0 +1,30 @@
+package game;
+
+public class Clock {
+    private int time = 0;
+    public int get24hrTime() {
+        return time;
+    }
+    public void set24hrTime(int newTime) {
+        if (newTime > 23 || newTime < 0) {
+            throw new IllegalArgumentException();
+        }
+        this.time = newTime;
+    }
+    public int get12hrTime(){
+        if (time == 0) {
+            return 12; // Special case 0
+        } else if (time <= 12) {
+            return time;
+        } else {
+            return time - 12;
+        }
+    }
+    public String get12hrPostfix() {
+        if (time < 12) {
+            return "AM";
+        } else {
+            return "PM";
+        }
+    }
+}
