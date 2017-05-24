@@ -1,14 +1,24 @@
 package game;
 
 import java.awt.BorderLayout;
+import java.awt.Container;
 import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
 import java.util.ArrayList;
+
+import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 import javax.swing.JToolBar;
 
 public class Game extends JFrame implements Runnable{
@@ -80,7 +90,7 @@ public class Game extends JFrame implements Runnable{
 		camera = new Camera(4.5, 4.5, 1, 0, 0, -.66);
 		screen = new Screen(map, mapWidth, mapHeight, textures, 640, 480);
 		addKeyListener(camera);
-		setSize(640, 480);
+		setSize(640, 510);
 		setResizable(false);
 		setTitle("3D Engine");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
